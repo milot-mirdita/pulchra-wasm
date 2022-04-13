@@ -1,4 +1,4 @@
-import { default as createPulchra } from './pulchra-wasm'
+import { default as createPulchra } from './pulchra-wasm.js'
 import pulchraWasm from './pulchra-wasm.wasm';
 
 function pulchra(pdb) {
