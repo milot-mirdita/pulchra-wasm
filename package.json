@@ -7,6 +7,11 @@
     "type": "git",
     "url": "git+https://github.com/milot-mirdita/pulchra-wasm.git"
   },
+  "files": [
+      "pulchra.js",
+      "pulchra-wasm.js",
+      "pulchra-wasm.wasm"
+  ],
   "keywords": [
     "proteins",
     "bioinformatics",
