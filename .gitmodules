@@ -1,0 +1,3 @@
+[submodule "pulchra/sds"]
+	path = pulchra/sds
+	url = https://github.com/antirez/sds
