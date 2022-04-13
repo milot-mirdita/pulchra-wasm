@@ -1,0 +1,22 @@
+{
+  "name": "pulchra-wasm",
+  "version": "0.0.1",
+  "description": "Pulchra secondary structure extraction tool port to WASM",
+  "main": "pulchra.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milot-mirdita/pulchra-wasm.git"
+  },
+  "keywords": [
+    "proteins",
+    "bioinformatics",
+    "secondary",
+    "structure"
+  ],
+  "author": "Milot Mirdita <milot@mirdita.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/milot-mirdita/pulchra-wasm/issues"
+  },
+  "homepage": "https://github.com/milot-mirdita/pulchra-wasm#readme"
+}
