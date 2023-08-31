@@ -3364,7 +3364,7 @@ void optimize_backbone(mol_type *chain) {
   }
 }
 #include <emscripten.h>
-int EMSCRIPTEN_KEEPALIVE pulchra(char* buffer) {
+char * EMSCRIPTEN_KEEPALIVE pulchra(char* buffer) {
   int i, j, next;
   char buf[100];
   char *ini_name = NULL;
@@ -3384,7 +3384,7 @@ int EMSCRIPTEN_KEEPALIVE pulchra(char* buffer) {
   chain = new_mol();
 
   if (read_pdb_file(buffer, chain, "chain") != 0) {
-    return (char*)sdsempty();
+    return sdsempty();
   }
 
   chain_length = chain->nres;
@@ -3421,7 +3421,7 @@ int EMSCRIPTEN_KEEPALIVE pulchra(char* buffer) {
 
   sds out = write_pdb(chain);
 
-  return (char*)out;
+  return out;
 }
 void EMSCRIPTEN_KEEPALIVE pulchra_free(char* buffer) {
   sdsfree((sds)buffer);
