@@ -53,11 +53,14 @@ function pulchra(pdb) {
             locateFile: () => pulchraWasm
         }).then((instance) => {
             let { modifiedPdbString, replacementMap } = replaceNonStandardResidues(pdb);
+            const bytes = instance.lengthBytesUTF8(modifiedPdbString) + 1; // +1 for the null terminator
+            const inPtr = instance._malloc(bytes);
+            instance.stringToUTF8(modifiedPdbString, inPtr, bytes);
             const ptr = instance.ccall(
                 'pulchra',
                 'number',
-                ['string'],
-                [modifiedPdbString]
+                ['number'],
+                [inPtr]
             );
             const res = instance.UTF8ToString(ptr);
             instance.ccall(
@@ -66,6 +69,7 @@ function pulchra(pdb) {
                 ['number'],
                 [ptr]
             );
+            instance._free(inPtr);
             resolve(restoreOriginalPDB(res, replacementMap));
         });
     })
