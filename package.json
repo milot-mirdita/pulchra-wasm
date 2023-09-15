@@ -1,6 +1,6 @@
 {
   "name": "pulchra-wasm",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Pulchra secondary structure extraction tool port to WASM",
   "main": "pulchra.js",
   "repository": {
